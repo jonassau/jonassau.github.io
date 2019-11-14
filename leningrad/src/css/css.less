@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html{
+	font-family: 
+	-apple-system,
+	BlinkMacSystemFont,
+	Segoe UI, Roboto,
+	Oxygen, Ubuntu,
+	Cantarell, Fira
+	Sans, Droid Sans,
+	Helvetica Neue,
+	sans-serif;
+	color: @main_color;
+	scroll-behavior: smooth;
+}
+.main{
+	.display-flex();
+	align-items: flex-start; 
+	height: 100vh;
+}
+.form{
+	max-width: @max_width;
+	width: 100%;
+	margin: 0 auto;
+	.media-min(@break_s, margin, auto);
+	.media-min(@break_s, width, 80%);
+	padding: @offset;
+	border: 1px solid @border_color;
+	border-radius: 3px;
+	&__h{
+		font-size: 1.25rem;
+		margin: @offset 0;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-weight: normal;
+	}
+	&__unit{
+		margin: @offset 0;
+		.display-flex();
+	}
+	&__unit-name{
+		width: 100%;
+		.media-min(@break_md, width, 30%);
+	}
+	&__input{
+		border: 1px solid @border_color;
+		border-radius: 3px;
+		height: 45px;
+		width: 100%;
+		.media-min(@break_md, width, 70%);
+		text-indent: @offset_small;
+		color: @main_color;
+		&:focus {
+			outline: none;
+		}
+	}
+	&__checkbox{
+		width: 25px;
+		height: 25px;
+		margin: 0;
+	}
+	&__label{
+		padding: 0 5px;
+	}
+	&__button{
+		.button();
+	}
+}
